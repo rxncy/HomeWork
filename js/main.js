@@ -25,4 +25,9 @@ $(function () {
         e.preventDefault()
         $('.team__slider').slick('slickNext')
     })
+
+    $('.testimonials__slider').slick({
+        arrows:false,
+        // dots:true,
+    })
 })
