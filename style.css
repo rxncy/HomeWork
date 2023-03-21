@@ -834,20 +834,64 @@ body {
 
 .testimonials__slider-wrapper {
     padding: 0 50px;
+    position: relative;
+    margin-bottom: 33px;
 }
+
+.testimonials__slider-wrapper::before{
+    content: '';
+    background: url(images/decor/testi_circle.svg) no-repeat;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+    top: -270px;
+    left: -300px;
+}
+
 
 .testimonials__heading {
     margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
 }
+
+.testimonials__heading::before {
+    content: '';
+    background: url(images/decor/testi_shapes.svg);
+    width: 87px;
+    height: 47px;
+    position: absolute;
+    z-index: -1;
+    top: 30px;
+    right: 300px;
+}
+
+.testimonials__heading::after {
+    content: '';
+    background: url(images/decor/dots_team.svg);
+    width: 143px;
+    height: 105px;
+    position: absolute;
+    z-index: -1;
+    top: 450px;
+    right: 1100px;
+}
+
+
 
 .testimonials__slider {
     max-width: 1020px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
 }
+
+
 
 .testimonials__slide {
     padding: 64px;
     background-color: #fff;
+    border-radius: 4px;
 }
 
 .testimonials__slide-inner {
@@ -865,10 +909,10 @@ body {
     position: relative;
 }
 
-.quote::before{
+.quote::before {
     content: '';
-    background:url(images/decor/braces.svg);
-    width:28px;
+    background: url(images/decor/braces.svg);
+    width: 28px;
     height: 20px;
     top: 0;
     left: -58px;
@@ -899,4 +943,149 @@ body {
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
+}
+
+.testimonials__arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 5;
+}
+
+.testimonials__prev {
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.testimonials__next {
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.testimonials__arrow:hover path {
+    transition: all .3s;
+    fill: white;
+}
+
+.testimonials__arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    z-index: -1;
+    background: #FF3F3A;
+    transition: all 0.3s;
+}
+
+.testimonials__arrow:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.testimonials__next::before {
+    left: 41px;
+}
+
+.testimonials__prev::before {
+    left: 10px;
+}
+
+.testimonials__dots {}
+
+.testimonials__dots .slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials__dots li {
+    margin-right: 12px;
+}
+
+.testimonials__dots li:last-child {
+    margin-right: 0;
+}
+
+.testimonials__dots button {
+    font-size: 0;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.testimonials__dots button::before {
+    content: '';
+    height: 3px;
+    width: 30px;
+    border-radius: 3px;
+    background-color: #B3B7BC;
+}
+
+.testimonials__dots .slick-active button::before {
+    background-color: #424551;
+    transition: all .3s;
+}
+
+/* =================================================COMPANIES============================================================================== */
+/* =================================================COMPANIES============================================================================== */
+
+.main__companies {
+    padding-bottom: 153px;
+    background: #F4F5F7;
+}
+.companies {
+}
+.container {
+}
+
+.companies__heading{
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.companies__heading::after{
+    content: '';
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    top: -200px;
+    right: -440px;
+    background:url(images/decor/testi_circle2svg.svg) 0 0/100% no-repeat;
+}
+.companies__heading::before{
+    content: '';
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 340px;
+    left: -300px;
+    background:url(images/decor/companies_shapes.svg) 0 0/100% no-repeat;
+}
+
+.companies__grid {
+    display: grid;
+    grid-template: auto auto / repeat(6, 1fr);
+    gap: 40px 100px;
+}
+.companies__grid__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.companies__grid-link img{
+    filter: grayscale(1);
+    transition: all 0.3s;
+}
+
+.companies__grid-link:hover img{
+    filter:grayscale(0)
 }

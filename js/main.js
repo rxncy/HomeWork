@@ -28,6 +28,17 @@ $(function () {
 
     $('.testimonials__slider').slick({
         arrows:false,
-        // dots:true,
+        dots:true,
+        appendDots: $('.testimonials__dots'),
+        
+    })
+
+    $('.testimonials__prev').on('click', function (e) {
+        e.preventDefault()
+        $('.testimonials__slider').slick('slickPrev')
+    })
+    $('.testimonials__next').on('click', function (e) {
+        e.preventDefault()
+        $('.testimonials__slider').slick('slickNext')
     })
 })
